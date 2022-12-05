@@ -15,7 +15,7 @@ export class CardsService {
   constructor(private http: HttpClient) { }
 
   get() {
-    return this.http.get<Card[]>('https://jsonplaceholder.typicode.com/photos?_page=1&_limit=20').pipe(map(ris => ris))
+    return this.http.get<Card[]>('https://jsonplaceholder.typicode.com/photos').pipe(map(ris => ris))
   }
 
   delete(id: number) {

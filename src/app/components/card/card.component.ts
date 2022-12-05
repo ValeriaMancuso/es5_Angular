@@ -13,6 +13,7 @@ export class CardComponent implements OnInit {
   sub!: Subscription;
   cards: Card[] | undefined;
   count: number = 0;
+  loading = true;
 
 
   constructor(private http: HttpClient, private cardsSrv: CardsService) { }
@@ -25,6 +26,7 @@ export class CardComponent implements OnInit {
     this.sub = this.cardsSrv.get().subscribe((ris) => {
       this.cards = ris;
       console.log(ris)
+      this.loading = false;
     })
   }
 

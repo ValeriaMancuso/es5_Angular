@@ -1,4 +1,10 @@
-<div class="container-lg d-flex flex-wrap">
+<div *ngIf="loading">
+<div class="spinner-border text-info" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+</div>
+
+<div class="container-lg d-flex flex-wrap" *ngIf="!loading">
   <div *ngFor="let card of cards" class="card m-1" style="width: 18rem;">
     <img src="{{card.thumbnailUrl}}" class="card-img-top">
     <div class="card-body">
